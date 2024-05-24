@@ -72,13 +72,13 @@ public class Manager : MonoBehaviour
        int nbGoodPosition = masterMeow.GetGoodPosition(code);
        for(int i = 0; i < nbGoodPosition; i++)
        {
-        gameVerify[i].GetComponent<Image>().sprite = masterMeow.Good;
+        gameVerify[i].GetComponent<Image>().sprite = masterMeow.GoodCat;
        }
 
        int nbWrongPosition = masterMeow.GetWrongPosition();
        for(int i = nbGoodPosition; i < nbWrongPosition + nbGoodPosition; i++)
        {
-        gameVerify[i].GetComponent<Image>().sprite = masterMeow.Wrong;
+        gameVerify[i].GetComponent<Image>().sprite = masterMeow.WrongCat;
        }
 
        if(nbGoodPosition == 4)

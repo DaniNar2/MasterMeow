@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MasterMeow : MonoBehaviour
 {
-    public Sprite Cat, Fish, Hippo, Dog, Frog, Horse, Good, Wrong;
+    public Sprite BlackCat, CowCat, GreyCat, OrangeCat, StripesCat, WhiteCat, GoodCat, WrongCat;
     public string[] secretCode = new string[4];
     public string[] secretCodeTemp = new string[4];
     private Dictionary<string, Sprite> dicoSprite = new Dictionary<string, Sprite>();
@@ -15,12 +15,12 @@ public class MasterMeow : MonoBehaviour
     public GameObject hiddenSlot;
     void Awake()
     {
-        dicoSprite.Add("Cat", Cat);
-        dicoSprite.Add("Fish", Fish);
-        dicoSprite.Add("Hippo", Hippo);
-        dicoSprite.Add("Dog", Dog);
-        dicoSprite.Add("Frog", Frog);
-        dicoSprite.Add("Horse", Horse);
+        dicoSprite.Add("BlackCat", BlackCat);
+        dicoSprite.Add("CowCat", CowCat);
+        dicoSprite.Add("GreyCat", GreyCat);
+        dicoSprite.Add("OrangeCat", OrangeCat);
+        dicoSprite.Add("StripesCat", StripesCat);
+        dicoSprite.Add("WhiteCat", WhiteCat);
     }
     public Array GetNewSecretCode()
     {
