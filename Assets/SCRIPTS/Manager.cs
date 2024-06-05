@@ -17,6 +17,9 @@ public class Manager : MonoBehaviour
 
     void Start()
     {
+        masterMeow.finishPanel.SetActive(false);
+        masterMeow.messageWin.SetActive(false);
+        masterMeow.messageLose.SetActive(false);
         masterMeow.GetNewSecretCode();
         emptySprite = gameSlot[currentSlot].transform.Find("C1").GetComponent<Image>().sprite;
     }
@@ -108,10 +111,14 @@ public class Manager : MonoBehaviour
     void Win()
     {
         masterMeow.hiddenSlot.SetActive(false);
+        masterMeow.finishPanel.SetActive(true);
+        masterMeow.messageWin.SetActive(true);
     }
 
     void Lose()
     {
         masterMeow.hiddenSlot.SetActive(false);
+        masterMeow.finishPanel.SetActive(true);
+        masterMeow.messageLose.SetActive(true);
     }
 }

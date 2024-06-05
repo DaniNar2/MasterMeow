@@ -13,6 +13,10 @@ public class MasterMeow : MonoBehaviour
     private Dictionary<string, Sprite> dicoSprite = new Dictionary<string, Sprite>();
     private string[] codePlayer = new string[4];
     public GameObject hiddenSlot;
+    public GameObject finishPanel;
+    public GameObject messageWin;
+    public GameObject messageLose;
+
     void Awake()
     {
         dicoSprite.Add("BlackCat", BlackCat);
@@ -75,3 +79,5 @@ public class MasterMeow : MonoBehaviour
         return wrong;
     }
 }
+
+

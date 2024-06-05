@@ -31,6 +31,10 @@ MonoBehaviour:
     m_Key: BACK
     m_Metadata:
       m_Items: []
+  - m_Id: 4340576476553216
+    m_Key: WINNER
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
