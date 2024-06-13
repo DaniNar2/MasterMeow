@@ -11324,8 +11324,8 @@ MonoBehaviour:
   OrangeCat: {fileID: 21300000, guid: 2938aabde595aac45b10189faf8030f5, type: 3}
   StripesCat: {fileID: 21300000, guid: b87b3a13fc5ec07489c02c318dcacb80, type: 3}
   WhiteCat: {fileID: 21300000, guid: bca029fe1d7ba1743b9aa24d376e5189, type: 3}
-  GoodCat: {fileID: 21300000, guid: 741e6e8015aaef842844c5f77ef09ec2, type: 3}
-  WrongCat: {fileID: 21300000, guid: 41f527d4935a6b34a8a83b8d641ba69d, type: 3}
+  GoodCat: {fileID: 21300000, guid: 52e8786f42ed3024397135c27d5fe9a5, type: 3}
+  WrongCat: {fileID: 21300000, guid: 09579793b65cd814ea28cbc09d0a755f, type: 3}
   secretCode:
   - 
   - 
