@@ -38,6 +38,18 @@ MonoBehaviour:
     m_Localized: HAI VINTO!
     m_Metadata:
       m_Items: []
+  - m_Id: 8349375157510144
+    m_Localized: HAI PERSO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8349453146398720
+    m_Localized: SASSO CARTA FORBICE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8349458334752768
+    m_Localized: TRIS
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
