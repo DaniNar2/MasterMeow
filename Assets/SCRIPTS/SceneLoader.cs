@@ -14,5 +14,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+
+    public void LoadRPS(){
+        SceneManager.LoadScene("RPS");
+    }
     
 }
