@@ -15,8 +15,14 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public void LoadRPS(){
+    public void LoadRPS()
+    {
         SceneManager.LoadScene("RPS");
+    }
+
+    public void LoadMemory()
+    {
+        SceneManager.LoadScene("Memory");
     }
     
 }
