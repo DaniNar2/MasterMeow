@@ -16,8 +16,10 @@ public class GameManager : MonoBehaviour
     bool isPlayerSelected, isOpponentSelected, isGameFinished, isOpponentAI;
    string playerName, opponentName;
    [SerializeField] Text winningMessageText;
+    [SerializeField] Image playerImage, opponentImage;
+    [SerializeField] Sprite playerSprite, opponentSprite;
+    [SerializeField] Animator playerChoiceAnim, opponentChoiceAnim, playerSelectAnim, opponentSelectAnim;
 
-    // Update is called once per frame
     void Awake()
     {
         if(instance == null)
@@ -87,5 +89,21 @@ public class GameManager : MonoBehaviour
         {
             winningMessageText.text = opponentName + win;
         }
+        SetImage();
+        SetAnimation();
+    }
+
+    public void SetImage()
+    {
+        playerImage.sprite = playerSprite;
+        opponentImage.sprite = opponentSprite;
+    }
+
+    public void SetAnimation()
+    {
+        playerChoiceAnim.Play("anim_PlayerChoiceMove");
+        opponentChoiceAnim.Play("anim_OpponentChoiceMove");
+        playerSelectAnim.Play("anim_PlayerSelectedMove");
+        opponentSelectAnim.Play("anim_OpponentSelectedMove");
     }
 }
