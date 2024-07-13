@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
    string playerName, opponentName;
    [SerializeField] Text winningMessageText;
     [SerializeField] Image playerImage, opponentImage;
-    [SerializeField] Sprite playerSprite, opponentSprite;
+    [SerializeField] Sprite rockSprite, paperSprite, scissorsSprite;
     [SerializeField] Animator playerChoiceAnim, opponentChoiceAnim, playerSelectAnim, opponentSelectAnim;
 
     void Awake()
@@ -95,8 +95,23 @@ public class GameManager : MonoBehaviour
 
     public void SetImage()
     {
-        playerImage.sprite = playerSprite;
-        opponentImage.sprite = opponentSprite;
+        SetImage(playerImage, playerChoice);
+        SetImage(opponentImage, opponentChoice);
+    }
+    public void SetImage(Image target, Choices mychoice)
+    {
+        switch(mychoice)
+        {
+            case Choices.ROCK:
+                target.sprite = rockSprite;
+                break;
+            case Choices.PAPER:
+                target.sprite = paperSprite;
+                break;
+            case Choices.SCISSORS:
+                target.sprite = scissorsSprite;
+                break;
+        }
     }
 
     public void SetAnimation()
