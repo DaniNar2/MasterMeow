@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Sprite rockSprite, paperSprite, scissorsSprite;
     [SerializeField] Animator playerChoiceAnim, opponentChoiceAnim, playerSelectAnim, opponentSelectAnim;
 
+    public GameObject finishPanel;
+    public GameObject messageWin, messageLose, messageDraw;
     void Awake()
     {
         if(instance == null)
@@ -29,6 +32,10 @@ public class GameManager : MonoBehaviour
         playerName = "Player";
         opponentName = "Opponent";
         isOpponentAI = true;
+        finishPanel.SetActive(false);
+        messageWin.SetActive(false);
+        messageLose.SetActive(false);
+        messageDraw.SetActive(false);
     }
 
     public void Select(Choices myChoice, bool isPlayer)
@@ -61,6 +68,9 @@ public class GameManager : MonoBehaviour
 
     public void DetermineWinner()
     {
+        bool win = false;
+        bool lose = false;
+
         if(playerChoice == opponentChoice)
         {
             winningMessageText.text = draw;
@@ -68,29 +78,48 @@ public class GameManager : MonoBehaviour
         else if(playerChoice == Choices.PAPER && opponentChoice == Choices.ROCK)
         {
             winningMessageText.text = playerName + win;
+            win = true;
         }
         else if(playerChoice == Choices.ROCK && opponentChoice == Choices.SCISSORS)
         {
             winningMessageText.text = playerName + win;
+            win = true;
         }
         else if(playerChoice == Choices.SCISSORS && opponentChoice == Choices.PAPER)
         {
             winningMessageText.text = playerName + win;
+            win = true;
         }
         else if(playerChoice == Choices.PAPER && opponentChoice == Choices.SCISSORS)
         {
             winningMessageText.text = opponentName + win;
+            lose = true;
         }
         else if(playerChoice == Choices.ROCK && opponentChoice == Choices.PAPER)
         {
             winningMessageText.text = opponentName + win;
+            lose = true;
         }
         else if(playerChoice == Choices.SCISSORS && opponentChoice == Choices.ROCK)
         {
             winningMessageText.text = opponentName + win;
+            lose = true;
         }
         SetImage();
         SetAnimation();
+        if(win==true)
+        {
+            Win();
+        }
+        else if(lose==true)
+        {
+            Lose();
+        }
+        else
+        {
+            Draw();
+        }
+
     }
 
     public void SetImage()
@@ -120,5 +149,28 @@ public class GameManager : MonoBehaviour
         opponentChoiceAnim.Play("anim_OpponentChoiceMove");
         playerSelectAnim.Play("anim_PlayerSelectedMove");
         opponentSelectAnim.Play("anim_OpponentSelectedMove");
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void Win()
+    {
+        finishPanel.SetActive(true);
+        messageWin.SetActive(true);
+    }
+
+    void Lose()
+    {
+        finishPanel.SetActive(true);
+        messageLose.SetActive(true);
+    }
+
+    void Draw()
+    {
+        finishPanel.SetActive(true);
+        messageDraw.SetActive(true);
     }
 }
