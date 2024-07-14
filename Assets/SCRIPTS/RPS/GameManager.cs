@@ -10,8 +10,9 @@ public enum Choices { ROCK, PAPER, SCISSORS, NONE }
 
 public class GameManager : MonoBehaviour
 {
-    const string win = " Wins!";
-    const string draw = "Draw!";
+    //const string win = " Wins!";
+    //const string draw = "Draw!";
+    const string result = "Loading result...";
     public static GameManager instance;
     Choices playerChoice = Choices.NONE, opponentChoice = Choices.NONE;
     bool isPlayerSelected, isOpponentSelected, isGameFinished, isOpponentAI;
@@ -73,53 +74,66 @@ public class GameManager : MonoBehaviour
 
         if(playerChoice == opponentChoice)
         {
-            winningMessageText.text = draw;
+            //winningMessageText.text = draw;
+            winningMessageText.text = result;
         }
         else if(playerChoice == Choices.PAPER && opponentChoice == Choices.ROCK)
         {
-            winningMessageText.text = playerName + win;
+            //winningMessageText.text = playerName + win;
+            winningMessageText.text = result;
             win = true;
         }
         else if(playerChoice == Choices.ROCK && opponentChoice == Choices.SCISSORS)
         {
-            winningMessageText.text = playerName + win;
+            //winningMessageText.text = playerName + win;
+            winningMessageText.text = result;
             win = true;
         }
         else if(playerChoice == Choices.SCISSORS && opponentChoice == Choices.PAPER)
         {
-            winningMessageText.text = playerName + win;
+            //winningMessageText.text = playerName + win;
+            winningMessageText.text = result;
             win = true;
         }
         else if(playerChoice == Choices.PAPER && opponentChoice == Choices.SCISSORS)
         {
-            winningMessageText.text = opponentName + win;
+            //winningMessageText.text = opponentName + win;
+            winningMessageText.text = result;
             lose = true;
         }
         else if(playerChoice == Choices.ROCK && opponentChoice == Choices.PAPER)
         {
-            winningMessageText.text = opponentName + win;
+            //winningMessageText.text = opponentName + win;
+            winningMessageText.text = result;
             lose = true;
         }
         else if(playerChoice == Choices.SCISSORS && opponentChoice == Choices.ROCK)
         {
-            winningMessageText.text = opponentName + win;
+            //winningMessageText.text = opponentName + win;
+            winningMessageText.text = result;
             lose = true;
         }
         SetImage();
         SetAnimation();
         if(win==true)
         {
-            Win();
+            StartCoroutine(DelayedResult(Win));
         }
         else if(lose==true)
         {
-            Lose();
+            StartCoroutine(DelayedResult(Lose));
         }
         else
         {
-            Draw();
+            StartCoroutine(DelayedResult(Draw));
         }
 
+    }
+
+     IEnumerator DelayedResult(System.Action resultAction)
+    {
+        yield return new WaitForSeconds(2); // Ritardo di 2 secondi
+        resultAction.Invoke();
     }
 
     public void SetImage()
