@@ -20,15 +20,12 @@ public class GameManager : MonoBehaviour
     public GameObject finishPanel;
     public GameObject messageWin, messageLose, messageDraw;
 
-    // Riferimento al CoinManager
-    private CoinManager coinManager;
-
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+    
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        
         playerName = "Player";
         opponentName = "Opponent";
         isOpponentAI = true;
@@ -36,12 +33,6 @@ public class GameManager : MonoBehaviour
         messageWin.SetActive(false);
         messageLose.SetActive(false);
         messageDraw.SetActive(false);
-    }
-
-    void Start()
-    {
-        // Trova il CoinManager nella scena
-        coinManager = CoinManager.instance;
     }
 
     public void Select(Choices myChoice, bool isPlayer)
@@ -73,57 +64,25 @@ public class GameManager : MonoBehaviour
 
     public void DetermineWinner()
     {
-        bool win = false;
-        bool lose = false;
-
         if (playerChoice == opponentChoice)
         {
             winningMessageText.text = result;
+            StartCoroutine(DelayedResult(Draw));
         }
-        else if (playerChoice == Choices.PAPER && opponentChoice == Choices.ROCK)
+        else if ((playerChoice == Choices.PAPER && opponentChoice == Choices.ROCK) ||
+                 (playerChoice == Choices.ROCK && opponentChoice == Choices.SCISSORS) ||
+                 (playerChoice == Choices.SCISSORS && opponentChoice == Choices.PAPER))
         {
             winningMessageText.text = result;
-            win = true;
-        }
-        else if (playerChoice == Choices.ROCK && opponentChoice == Choices.SCISSORS)
-        {
-            winningMessageText.text = result;
-            win = true;
-        }
-        else if (playerChoice == Choices.SCISSORS && opponentChoice == Choices.PAPER)
-        {
-            winningMessageText.text = result;
-            win = true;
-        }
-        else if (playerChoice == Choices.PAPER && opponentChoice == Choices.SCISSORS)
-        {
-            winningMessageText.text = result;
-            lose = true;
-        }
-        else if (playerChoice == Choices.ROCK && opponentChoice == Choices.PAPER)
-        {
-            winningMessageText.text = result;
-            lose = true;
-        }
-        else if (playerChoice == Choices.SCISSORS && opponentChoice == Choices.ROCK)
-        {
-            winningMessageText.text = result;
-            lose = true;
-        }
-        SetImage();
-        SetAnimation();
-        if (win == true)
-        {
             StartCoroutine(DelayedResult(Win));
-        }
-        else if (lose == true)
-        {
-            StartCoroutine(DelayedResult(Lose));
         }
         else
         {
-            StartCoroutine(DelayedResult(Draw));
+            winningMessageText.text = result;
+            StartCoroutine(DelayedResult(Lose));
         }
+        SetImage();
+        SetAnimation();
     }
 
     IEnumerator DelayedResult(System.Action resultAction)
@@ -137,6 +96,7 @@ public class GameManager : MonoBehaviour
         SetImage(playerImage, playerChoice);
         SetImage(opponentImage, opponentChoice);
     }
+
     public void SetImage(Image target, Choices mychoice)
     {
         switch (mychoice)
@@ -168,22 +128,30 @@ public class GameManager : MonoBehaviour
 
     void Win()
     {
-        finishPanel.SetActive(true);
-        messageWin.SetActive(true);
-        coinManager.AddCoins(2); // Aggiungi 2 monete in caso di vittoria
+        if (!finishPanel.activeInHierarchy)
+        {
+            finishPanel.SetActive(true);
+            messageWin.SetActive(true);
+            CoinManager.instance.AddPointsRpsWin();
+        }
     }
 
     void Lose()
     {
-        finishPanel.SetActive(true);
-        messageLose.SetActive(true);
-        coinManager.AddCoins(0); // Aggiungi 0 monete in caso di sconfitta
+        if (!finishPanel.activeInHierarchy)
+        {
+            finishPanel.SetActive(true);
+            messageLose.SetActive(true);
+        }
     }
 
     void Draw()
     {
-        finishPanel.SetActive(true);
-        messageDraw.SetActive(true);
-        coinManager.AddCoins(1); // Aggiungi 1 moneta in caso di pareggio
+        if (!finishPanel.activeInHierarchy)
+        {
+            finishPanel.SetActive(true);
+            messageDraw.SetActive(true);
+            CoinManager.instance.AddPointsRpsDraw();
+        }
     }
 }

@@ -113,6 +113,7 @@ public class Manager : MonoBehaviour
         masterMeow.hiddenSlot.SetActive(false);
         masterMeow.finishPanel.SetActive(true);
         masterMeow.messageWin.SetActive(true);
+        CoinManager.instance.AddPointsMasterMeow();
     }
 
     void Lose()

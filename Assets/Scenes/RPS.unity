@@ -692,64 +692,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &669508471
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 669508473}
-  - component: {fileID: 669508472}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &669508472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669508471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c21d7b7dfb1b4448e027b29ff33da0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  winningMessageText: {fileID: 1461618118}
-  playerImage: {fileID: 908471539}
-  opponentImage: {fileID: 949766951}
-  rockSprite: {fileID: 21300000, guid: 064c6cd9afc9f2945a5e4ad7527681d6, type: 3}
-  paperSprite: {fileID: 21300000, guid: d2e0616c798b407429a162bdbe44f69f, type: 3}
-  scissorsSprite: {fileID: 21300000, guid: f595eb649aeb32d4b880481496ec7f65, type: 3}
-  playerChoiceAnim: {fileID: 1639457089}
-  opponentChoiceAnim: {fileID: 1204170400}
-  playerSelectAnim: {fileID: 908471538}
-  opponentSelectAnim: {fileID: 949766950}
-  finishPanel: {fileID: 40027501}
-  messageWin: {fileID: 1677460200}
-  messageLose: {fileID: 801898738}
-  messageDraw: {fileID: 248794244}
---- !u!4 &669508473
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669508471}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27691367, y: -0.36565676, z: 8.809895}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732926016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,7 +1036,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 669508472}
+        - m_Target: {fileID: 824103218}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: Replay
           m_Mode: 1
@@ -1378,6 +1320,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804530945}
   m_CullTransparentMesh: 1
+--- !u!1 &824103217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824103219}
+  - component: {fileID: 824103218}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &824103218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824103217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c21d7b7dfb1b4448e027b29ff33da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winningMessageText: {fileID: 1461618118}
+  playerImage: {fileID: 908471539}
+  opponentImage: {fileID: 949766951}
+  rockSprite: {fileID: 21300000, guid: 064c6cd9afc9f2945a5e4ad7527681d6, type: 3}
+  paperSprite: {fileID: 21300000, guid: d2e0616c798b407429a162bdbe44f69f, type: 3}
+  scissorsSprite: {fileID: 21300000, guid: f595eb649aeb32d4b880481496ec7f65, type: 3}
+  playerChoiceAnim: {fileID: 1639457089}
+  opponentChoiceAnim: {fileID: 1204170400}
+  playerSelectAnim: {fileID: 908471538}
+  opponentSelectAnim: {fileID: 949766950}
+  finishPanel: {fileID: 40027501}
+  messageWin: {fileID: 1677460200}
+  messageLose: {fileID: 801898738}
+  messageDraw: {fileID: 248794244}
+--- !u!4 &824103219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824103217}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 123.50302, y: 1147.6425, z: -5.851708}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826301932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1605,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 669508472}
+        - m_Target: {fileID: 824103218}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: Replay
           m_Mode: 1
@@ -2405,7 +2405,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 669508472}
+        - m_Target: {fileID: 824103218}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: Replay
           m_Mode: 1
@@ -2824,51 +2824,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400082522}
   m_CullTransparentMesh: 1
---- !u!1 &1433971865
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1433971867}
-  - component: {fileID: 1433971866}
-  m_Layer: 0
-  m_Name: CoinManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1433971866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433971865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b74da00a05d6fbd48b04df964c784642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinText: {fileID: 0}
---- !u!4 &1433971867
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433971865}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 540, y: 1140, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1461618116
 GameObject:
   m_ObjectHideFlags: 0
@@ -3796,6 +3751,5 @@ SceneRoots:
   - {fileID: 1929536708}
   - {fileID: 1254894955}
   - {fileID: 433274377}
-  - {fileID: 669508473}
   - {fileID: 326109752}
-  - {fileID: 1433971867}
+  - {fileID: 824103219}

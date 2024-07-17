@@ -5,58 +5,58 @@ public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;
     public Text coinText;
-    private int coins = 0;
+    int coins = 0;
 
-    void Awake()
+    public void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // Assicurati che il CoinManager non venga distrutto quando cambi scena
-        }
-        else
-        {
-            Destroy(gameObject); // Assicurati che non ci siano duplicati del CoinManager
-        }
-        // Carica le monete salvate
-        LoadCoins();
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
-        UpdateCoinText();
+        coins = PlayerPrefs.GetInt("coins", 0);
+        coinText.text = coins.ToString();
     }
 
-    public void AddCoins(int amount)
+    public void AddPointsRpsWin()
     {
-        coins += amount;
-        SaveCoins();
-        UpdateCoinText(); // Aggiorna il testo delle monete nella schermata attuale, se presente
+        Debug.Log("AddPointsRpsWin called");
+        coins += 2;
+        coinText.text = coins.ToString();
+        PlayerPrefs.SetInt("coin", coins);
     }
 
-    public int GetCoins()
+    public void AddPointsRpsDraw()
     {
-        return coins;
+        Debug.Log("AddPointsRpsDraw called");
+        coins += 1;
+        coinText.text = coins.ToString();
+        PlayerPrefs.SetInt("coins", coins);
     }
 
-    private void UpdateCoinText()
+    public void AddPointsMemory()
     {
-        if (coinText != null)
-        {
-            coinText.text = "" + coins;
-        }
+        Debug.Log("AddPointsRpsDraw called");
+        coins += 2;
+        coinText.text = coins.ToString();
+        PlayerPrefs.SetInt("coins", coins);
     }
 
-    private void SaveCoins()
+    public void AddPointsTTT()
     {
-        PlayerPrefs.SetInt("Coins", coins);
+        Debug.Log("AddPointsRpsDraw called");
+        coins += 2;
+        coinText.text = coins.ToString();
+        PlayerPrefs.SetInt("coins", coins);
     }
 
-    private void LoadCoins()
+    public void AddPointsMasterMeow()
     {
-        if (PlayerPrefs.HasKey("Coins"))
-        {
-            coins = PlayerPrefs.GetInt("Coins");
-        }
+        Debug.Log("AddPointsRpsDraw called");
+        coins += 4;
+        coinText.text = coins.ToString();
+        PlayerPrefs.SetInt("coins", coins);
     }
+
 }
