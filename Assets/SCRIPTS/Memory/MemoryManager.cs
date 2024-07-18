@@ -68,6 +68,7 @@ public class MemoryManager : MonoBehaviour
                     }
                     second.UpdateTurn();
 
+
                     if(first.cat == second.cat)
                     {
                         first.hasTurnFinished = true;

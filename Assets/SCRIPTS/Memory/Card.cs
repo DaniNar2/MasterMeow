@@ -36,7 +36,6 @@ public class Card : MonoBehaviour
     public void UpdateTurn()
     {
         hasClicked = true;
-        //UpdateImage();
         animator.Play("Reveal", -1, 0f);
     }
 
@@ -48,7 +47,6 @@ public class Card : MonoBehaviour
     public void RemoveTurn()
     {
         hasClicked = false;
-        //RemoveImage();
         animator.Play("Unreveal", -1, 0f);
     }
 
