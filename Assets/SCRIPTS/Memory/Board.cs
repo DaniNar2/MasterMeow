@@ -12,7 +12,7 @@ public class Board
         matches = 0;
         choices = new List<int>();
 
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 10; i++)
         {
             choices.Add(i);
             choices.Add(i);
@@ -35,7 +35,7 @@ public class Board
     public bool UpdateChoice()
     {
         matches++;
-        return matches == 6;
+        return matches == 10;
     }
     
 }
