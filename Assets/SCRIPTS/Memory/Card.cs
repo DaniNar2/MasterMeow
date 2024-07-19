@@ -46,6 +46,12 @@ public class Card : MonoBehaviour
 
     public void RemoveTurn()
     {
+        StartCoroutine(RemoveTurnCoroutine());
+    }
+
+    private IEnumerator RemoveTurnCoroutine()
+    {
+        yield return new WaitForSeconds(1f); 
         hasClicked = false;
         animator.Play("Unreveal", -1, 0f);
     }

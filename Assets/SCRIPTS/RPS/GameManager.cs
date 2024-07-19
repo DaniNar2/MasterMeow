@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         {
             finishPanel.SetActive(true);
             messageWin.SetActive(true);
-            CoinManager.instance.AddPointsRpsWin();
+            CoinManager.instance.AddPointsRPSWin();
         }
     }
 
@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
         {
             finishPanel.SetActive(true);
             messageDraw.SetActive(true);
-            CoinManager.instance.AddPointsRpsDraw();
+            CoinManager.instance.AddPointsRPSDraw();
         }
     }
 }

@@ -19,7 +19,7 @@ public class CoinManager : MonoBehaviour
         coinText.text = coins.ToString();
     }
 
-    public void AddPointsRpsWin()
+    public void AddPointsRPSWin()
     {
         Debug.Log("AddPointsRpsWin called");
         coins += 2;
@@ -27,7 +27,7 @@ public class CoinManager : MonoBehaviour
         PlayerPrefs.SetInt("coin", coins);
     }
 
-    public void AddPointsRpsDraw()
+    public void AddPointsRPSDraw()
     {
         Debug.Log("AddPointsRpsDraw called");
         coins += 1;

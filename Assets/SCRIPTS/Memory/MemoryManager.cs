@@ -12,6 +12,9 @@ public class MemoryManager : MonoBehaviour
     bool hasGameFinished, isFirstTurn;
     Card first;
 
+    public GameObject finishPanel;
+    public GameObject messageWin;
+
     public void Replay()
     {
          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -19,33 +22,30 @@ public class MemoryManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
         myBoard = new Board();
         hasGameFinished = false;
         isFirstTurn = true;
+        finishPanel.SetActive(false);
+        messageWin.SetActive(false);
     }
 
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            //if Game Has Finished
+            
             if (hasGameFinished) return;
-
-            //Raycase
+            
+            
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
-            //if not hit
+            
             if (!hit.collider) return;
+            
 
             if(hit.collider.CompareTag("Card"))
             {
@@ -76,6 +76,7 @@ public class MemoryManager : MonoBehaviour
                         if(myBoard.UpdateChoice())
                         {
                             hasGameFinished = true;
+                            Win();
                             return;
                         }
                         isFirstTurn = !isFirstTurn;
@@ -88,5 +89,18 @@ public class MemoryManager : MonoBehaviour
                 isFirstTurn = !isFirstTurn;
             }
         }
+    }
+
+    private void Win()
+    {
+        StartCoroutine(WinCoroutine());
+    }
+
+    private IEnumerator WinCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        finishPanel.SetActive(true);
+        messageWin.SetActive(true);
+        CoinManager.instance.AddPointsMemory();
     }
 }
