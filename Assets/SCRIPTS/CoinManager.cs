@@ -37,7 +37,7 @@ public class CoinManager : MonoBehaviour
 
     public void AddPointsMemory()
     {
-        Debug.Log("AddPointsRpsDraw called");
+        Debug.Log("AddPointsMemory called");
         coins += 2;
         coinText.text = coins.ToString();
         PlayerPrefs.SetInt("coins", coins);
@@ -45,7 +45,7 @@ public class CoinManager : MonoBehaviour
 
     public void AddPointsTTT()
     {
-        Debug.Log("AddPointsRpsDraw called");
+        Debug.Log("AddPointsTTT called");
         coins += 2;
         coinText.text = coins.ToString();
         PlayerPrefs.SetInt("coins", coins);
@@ -53,7 +53,7 @@ public class CoinManager : MonoBehaviour
 
     public void AddPointsMasterMeow()
     {
-        Debug.Log("AddPointsRpsDraw called");
+        Debug.Log("AddPointsMasterMeow called");
         coins += 4;
         coinText.text = coins.ToString();
         PlayerPrefs.SetInt("coins", coins);

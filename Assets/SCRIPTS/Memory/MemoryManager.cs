@@ -14,6 +14,9 @@ public class MemoryManager : MonoBehaviour
 
     public GameObject finishPanel;
     public GameObject messageWin;
+    public AudioClip cardFlipSound;
+    public AudioClip matchSound;
+    private AudioSource audioSource;
 
     public void Replay()
     {
@@ -29,6 +32,7 @@ public class MemoryManager : MonoBehaviour
         isFirstTurn = true;
         finishPanel.SetActive(false);
         messageWin.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void CardClicked(Card card)
@@ -39,16 +43,22 @@ public class MemoryManager : MonoBehaviour
         {
             first = card;
             first.UpdateTurn();
+            audioSource.PlayOneShot(cardFlipSound);
+
         }
         else
         {
             Card second = card;
             second.UpdateTurn();
+            audioSource.PlayOneShot(cardFlipSound);
+
 
             if (first.cat == second.cat)
             {
                 first.hasTurnFinished = true;
                 second.hasTurnFinished = true;
+                audioSource.PlayOneShot(matchSound);
+
                 if (myBoard.UpdateChoice())
                 {
                     hasGameFinished = true;
