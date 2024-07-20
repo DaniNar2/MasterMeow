@@ -5,22 +5,17 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    [HideInInspector]
-    public bool hasClicked, hasTurnFinished;
+    [HideInInspector] public bool hasClicked, hasTurnFinished;
 
-    [SerializeField]
-    int index;
+    public int index;
+   
+    [HideInInspector] public int cat;
+    
+    [SerializeField] Sprite unrevealed;
+    
+    [SerializeField] List<Sprite> cats;
 
-    [HideInInspector]
-    public int cat;
-
-    [SerializeField]
-    Sprite unrevealed;
-
-    [SerializeField]
-    List<Sprite> cats;
-
-    Image renderer;
+    Image image;
     Animator animator;
 
     // Start is called before the first frame update
@@ -29,9 +24,9 @@ public class Card : MonoBehaviour
         hasClicked = false;
         hasTurnFinished = false;
         cat = MemoryManager.instance.myBoard.GetIndex(index);
-        renderer = GetComponent<Image>();
+        image = GetComponent<Image>();
         animator = GetComponent<Animator>();
-        renderer.sprite = unrevealed;
+        image.sprite = unrevealed;
     }
 
     public void UpdateTurn()
@@ -45,7 +40,7 @@ public class Card : MonoBehaviour
 
     public void UpdateImage()
     {
-        renderer.sprite = cats[cat];
+        image.sprite = cats[cat];
     }
 
     public void RemoveTurn()
@@ -57,14 +52,12 @@ public class Card : MonoBehaviour
     {
         yield return new WaitForSeconds(1f); 
         hasClicked = false;
-       if (!hasTurnFinished)
-        {
-            animator.Play("Unreveal", -1, 0f);
-        }
+        animator.Play("Unreveal", -1, 0f);
+    
     }
 
     public void RemoveImage()
     {
-        renderer.sprite = unrevealed;
+        image.sprite = unrevealed;
     }
 }

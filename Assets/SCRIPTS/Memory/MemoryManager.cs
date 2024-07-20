@@ -43,13 +43,6 @@ public class MemoryManager : MonoBehaviour
         else
         {
             Card second = card;
-            if (second.hasClicked)
-            {
-                first.RemoveTurn();
-                second.RemoveTurn();
-                isFirstTurn = !isFirstTurn;
-                return;
-            }
             second.UpdateTurn();
 
             if (first.cat == second.cat)
@@ -65,12 +58,17 @@ public class MemoryManager : MonoBehaviour
                 isFirstTurn = !isFirstTurn;
                 return;
             }
-
+            else
+            {
+                
             first.RemoveTurn();
             second.RemoveTurn();
+            }
         }
         isFirstTurn = !isFirstTurn;
     }
+
+
 
     private void Win()
     {
