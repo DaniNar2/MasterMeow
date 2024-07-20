@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MemoryManager : MonoBehaviour
 {
@@ -31,64 +31,45 @@ public class MemoryManager : MonoBehaviour
         messageWin.SetActive(false);
     }
 
-    private void Update()
+    public void CardClicked(Card card)
     {
-        if(Input.GetMouseButtonDown(0))
+        if (hasGameFinished) return;
+
+        if (isFirstTurn)
         {
-            
-            if (hasGameFinished) return;
-            
-            
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-
-            
-            if (!hit.collider) return;
-            
-
-            if(hit.collider.CompareTag("Card"))
+            first = card;
+            first.UpdateTurn();
+        }
+        else
+        {
+            Card second = card;
+            if (second.hasClicked)
             {
-                if (hit.collider.gameObject.GetComponent<Card>().hasTurnFinished) return;
+                first.RemoveTurn();
+                second.RemoveTurn();
+                isFirstTurn = !isFirstTurn;
+                return;
+            }
+            second.UpdateTurn();
 
-                if(isFirstTurn)
+            if (first.cat == second.cat)
+            {
+                first.hasTurnFinished = true;
+                second.hasTurnFinished = true;
+                if (myBoard.UpdateChoice())
                 {
-                    first = hit.collider.gameObject.GetComponent<Card>();
-                    first.UpdateTurn();
-                }
-                else
-                {
-                    Card second = hit.collider.gameObject.GetComponent<Card>();
-                    if(second.hasClicked)
-                    {
-                        first.RemoveTurn();
-                        second.RemoveTurn();
-                        isFirstTurn = !isFirstTurn;
-                        return;
-                    }
-                    second.UpdateTurn();
-
-
-                    if(first.cat == second.cat)
-                    {
-                        first.hasTurnFinished = true;
-                        second.hasTurnFinished = true;
-                        if(myBoard.UpdateChoice())
-                        {
-                            hasGameFinished = true;
-                            Win();
-                            return;
-                        }
-                        isFirstTurn = !isFirstTurn;
-                        return;
-                    }
-
-                    first.RemoveTurn();
-                    second.RemoveTurn();
+                    hasGameFinished = true;
+                    Win();
+                    return;
                 }
                 isFirstTurn = !isFirstTurn;
+                return;
             }
+
+            first.RemoveTurn();
+            second.RemoveTurn();
         }
+        isFirstTurn = !isFirstTurn;
     }
 
     private void Win()
