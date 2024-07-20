@@ -7,7 +7,6 @@ public enum Choices { ROCK, PAPER, SCISSORS, NONE }
 
 public class GameManager : MonoBehaviour
 {
-    const string result = "Loading result...";
     public static GameManager instance;
     Choices playerChoice = Choices.NONE, opponentChoice = Choices.NONE;
     bool isPlayerSelected, isOpponentSelected, isGameFinished, isOpponentAI;
@@ -66,19 +65,16 @@ public class GameManager : MonoBehaviour
     {
         if (playerChoice == opponentChoice)
         {
-            winningMessageText.text = result;
             StartCoroutine(DelayedResult(Draw));
         }
         else if ((playerChoice == Choices.PAPER && opponentChoice == Choices.ROCK) ||
                  (playerChoice == Choices.ROCK && opponentChoice == Choices.SCISSORS) ||
                  (playerChoice == Choices.SCISSORS && opponentChoice == Choices.PAPER))
         {
-            winningMessageText.text = result;
             StartCoroutine(DelayedResult(Win));
         }
         else
         {
-            winningMessageText.text = result;
             StartCoroutine(DelayedResult(Lose));
         }
         SetImage();
