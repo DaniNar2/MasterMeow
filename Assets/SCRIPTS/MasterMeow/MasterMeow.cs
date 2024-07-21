@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class MasterMeow : MonoBehaviour
 {
-    public Sprite BlackCat, CowCat, GreyCat, OrangeCat, StripesCat, WhiteCat, GoodCat, WrongCat;
+    //public Sprite BlackCat, CowCat, GreyCat, OrangeCat, StripesCat, WhiteCat, GoodCat, WrongCat;
+    public Sprite Cat1, Cat2, Cat3, Cat4, Cat5, Cat6, GoodCat, WrongCat;
     public string[] secretCode = new string[4];
     public string[] secretCodeTemp = new string[4];
     private Dictionary<string, Sprite> dicoSprite = new Dictionary<string, Sprite>();
@@ -19,12 +20,18 @@ public class MasterMeow : MonoBehaviour
 
     void Awake()
     {
-        dicoSprite.Add("BlackCat", BlackCat);
+        /*dicoSprite.Add("BlackCat", BlackCat);
         dicoSprite.Add("CowCat", CowCat);
         dicoSprite.Add("GreyCat", GreyCat);
         dicoSprite.Add("OrangeCat", OrangeCat);
         dicoSprite.Add("StripesCat", StripesCat);
-        dicoSprite.Add("WhiteCat", WhiteCat);
+        dicoSprite.Add("WhiteCat", WhiteCat);*/
+        dicoSprite.Add("BlackCat", Cat1);
+        dicoSprite.Add("CowCat", Cat2);
+        dicoSprite.Add("GreyCat", Cat3);
+        dicoSprite.Add("OrangeCat", Cat4);
+        dicoSprite.Add("StripesCat", Cat5);
+        dicoSprite.Add("WhiteCat", Cat6);
     }
     public Array GetNewSecretCode()
     {

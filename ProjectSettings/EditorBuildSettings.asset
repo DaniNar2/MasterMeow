@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/SCENES/Main.unity
     guid: 398ebe2ab5a55354f8af40d918c78584
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/SCENES/Game.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Scenes/RPS.unity
+    path: Assets/SCENES/RPS.unity
     guid: bd4fd494e4d8fb246bb53eaaeb89d263
   - enabled: 1
-    path: Assets/Scenes/Mememory.unity
+    path: Assets/SCENES/Mememory.unity
     guid: df984d573df19f845b68f25421486382
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 608a0b2c604fd754093eeb0caa0c8367, type: 2}

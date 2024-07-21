@@ -11125,12 +11125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4fb514f93ed9745a843e0970df226c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlackCat: {fileID: 21300000, guid: 89b3edcffc666d04cbb65632f1580449, type: 3}
-  CowCat: {fileID: 21300000, guid: b632c861b1be11c439b7e472f671ad77, type: 3}
-  GreyCat: {fileID: 21300000, guid: c6f7a0b33fff71b4ea6ba6c283099eac, type: 3}
-  OrangeCat: {fileID: 21300000, guid: 2938aabde595aac45b10189faf8030f5, type: 3}
-  StripesCat: {fileID: 21300000, guid: b87b3a13fc5ec07489c02c318dcacb80, type: 3}
-  WhiteCat: {fileID: 21300000, guid: bca029fe1d7ba1743b9aa24d376e5189, type: 3}
+  Cat1: {fileID: 21300000, guid: 0f4eee7c68f0c10479c259cdf3337d17, type: 3}
+  Cat2: {fileID: 21300000, guid: fe0f58dcc471d1e458cfbee9bff7755c, type: 3}
+  Cat3: {fileID: 21300000, guid: 69b8a985d5ee0404694ea849363e5b16, type: 3}
+  Cat4: {fileID: 21300000, guid: ce77352740de5fd4fa951d658bedda86, type: 3}
+  Cat5: {fileID: 21300000, guid: d783c18d84ce57b4c84efeed53f22c74, type: 3}
+  Cat6: {fileID: 21300000, guid: 56ee68e4b0123eb408245b27d676dcd9, type: 3}
   GoodCat: {fileID: 21300000, guid: 52e8786f42ed3024397135c27d5fe9a5, type: 3}
   WrongCat: {fileID: 21300000, guid: 09579793b65cd814ea28cbc09d0a755f, type: 3}
   secretCode:
