@@ -51,6 +51,14 @@ MonoBehaviour:
     m_Key: DRAW
     m_Metadata:
       m_Items: []
+  - m_Id: 21030425149399040
+    m_Key: CAT BALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21034266565632000
+    m_Key: SHOP
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
