@@ -413,8 +413,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finishPanel: {fileID: 940523746}
   messageWin: {fileID: 1738519259}
-  cardFlipSound: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  cardFlipSound: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
   matchSound: {fileID: 8300000, guid: c7a1f2092cca1724eb722e3594bcb1f4, type: 3}
+  winSound: {fileID: 8300000, guid: 0bdc3df32a4a2a54888906c6a62ffaab, type: 3}
 --- !u!4 &176251932
 Transform:
   m_ObjectHideFlags: 0

@@ -3,7 +3,11 @@ guid: b358686dd83914247988f899d22e8b66
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - finishPanel: {instanceID: 0}
+  - messageWin: {instanceID: 0}
+  - cardFlipSound: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
+  - matchSound: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

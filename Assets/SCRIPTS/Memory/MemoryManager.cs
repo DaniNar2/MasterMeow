@@ -15,7 +15,7 @@ public class MemoryManager : MonoBehaviour
     public GameObject finishPanel;
     public GameObject messageWin;
     public AudioClip cardFlipSound;
-    public AudioClip matchSound;
+    public AudioClip matchSound, winSound;
     private AudioSource audioSource;
 
     public void Replay()
@@ -88,6 +88,7 @@ public class MemoryManager : MonoBehaviour
     private IEnumerator WinCoroutine()
     {
         yield return new WaitForSeconds(1f);
+        audioSource.PlayOneShot(winSound);
         finishPanel.SetActive(true);
         messageWin.SetActive(true);
         CoinManager.instance.AddPointsMemory();

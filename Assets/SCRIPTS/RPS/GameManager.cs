@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject finishPanel;
     public GameObject messageWin, messageLose, messageDraw;
+    private AudioSource audioSource;
+    private AudioClip winSound, loseSound, drawSound;
 
     void Awake()
     {
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         messageWin.SetActive(false);
         messageLose.SetActive(false);
         messageDraw.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Select(Choices myChoice, bool isPlayer)
@@ -126,6 +129,7 @@ public class GameManager : MonoBehaviour
     {
         if (!finishPanel.activeInHierarchy)
         {
+            audioSource.PlayOneShot(winSound);
             finishPanel.SetActive(true);
             messageWin.SetActive(true);
             CoinManager.instance.AddPointsRPSWin();
@@ -136,6 +140,7 @@ public class GameManager : MonoBehaviour
     {
         if (!finishPanel.activeInHierarchy)
         {
+            audioSource.PlayOneShot(loseSound);
             finishPanel.SetActive(true);
             messageLose.SetActive(true);
         }
@@ -145,6 +150,7 @@ public class GameManager : MonoBehaviour
     {
         if (!finishPanel.activeInHierarchy)
         {
+            audioSource.PlayOneShot(drawSound);
             finishPanel.SetActive(true);
             messageDraw.SetActive(true);
             CoinManager.instance.AddPointsRPSDraw();
