@@ -14,6 +14,8 @@ public class Manager : MonoBehaviour
     private int currentSlot = 0, currentCol = 1;
     private Sprite emptySprite;
     [SerializeField] string[] code = new string[4];
+    public AudioSource audioSource;
+    public AudioClip clickSound, winSound, loseSound;
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class Manager : MonoBehaviour
         masterMeow.messageLose.SetActive(false);
         masterMeow.GetNewSecretCode();
         emptySprite = gameSlot[currentSlot].transform.Find("C1").GetComponent<Image>().sprite;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void ColorSelect(Sprite sp)
@@ -29,6 +32,7 @@ public class Manager : MonoBehaviour
         if(!masterMeow.hiddenSlot.activeInHierarchy) return;
 
         gameSlot[currentSlot].transform.Find("C" + currentCol).GetComponent<Image>().sprite = sp;
+        audioSource.PlayOneShot(clickSound);
         code.SetValue(sp.name, currentCol -1);
         currentCol++;
         if(currentCol == 5) currentCol = 1;
@@ -113,6 +117,7 @@ public class Manager : MonoBehaviour
         masterMeow.hiddenSlot.SetActive(false);
         masterMeow.finishPanel.SetActive(true);
         masterMeow.messageWin.SetActive(true);
+        audioSource.PlayOneShot(winSound);
         CoinManager.instance.AddPointsMasterMeow();
     }
 
@@ -121,5 +126,6 @@ public class Manager : MonoBehaviour
         masterMeow.hiddenSlot.SetActive(false);
         masterMeow.finishPanel.SetActive(true);
         masterMeow.messageLose.SetActive(true);
+        audioSource.PlayOneShot(loseSound);
     }
 }

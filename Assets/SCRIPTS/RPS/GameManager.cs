@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject finishPanel;
     public GameObject messageWin, messageLose, messageDraw;
-    private AudioSource audioSource;
-    private AudioClip winSound, loseSound, drawSound;
+    public AudioSource audioSource;
+    public AudioClip winSound, loseSound, drawSound, clickSound;
 
     void Awake()
     {
@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         }
         if (isPlayer)
         {
+            audioSource.PlayOneShot(clickSound);
             playerChoice = myChoice;
             isPlayerSelected = true;
             if (isOpponentAI)

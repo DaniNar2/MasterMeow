@@ -1405,6 +1405,11 @@ MonoBehaviour:
   messageWin: {fileID: 1677460200}
   messageLose: {fileID: 801898738}
   messageDraw: {fileID: 248794244}
+  audioSource: {fileID: 824103220}
+  winSound: {fileID: 8300000, guid: 0bdc3df32a4a2a54888906c6a62ffaab, type: 3}
+  loseSound: {fileID: 8300000, guid: e558a6df9ce137b44bee0f866134f2b5, type: 3}
+  drawSound: {fileID: 8300000, guid: 3332904c8331d5c4381fc0bf9050fc7e, type: 3}
+  clickSound: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
 --- !u!4 &824103219
 Transform:
   m_ObjectHideFlags: 0
