@@ -271,7 +271,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 123946660}
   gridSpaceImage: {fileID: 165164784}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 165164782}
 --- !u!1 &165164782
 GameObject:
@@ -812,7 +811,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 467847169}
   gridSpaceImage: {fileID: 2008747638}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 2008747636}
 --- !u!1 &508208149
 GameObject:
@@ -1037,7 +1035,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 554145567}
   gridSpaceImage: {fileID: 1060049596}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 1060049594}
 --- !u!1 &685038643
 GameObject:
@@ -1187,7 +1184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 685038645}
   gridSpaceImage: {fileID: 1093916491}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 1093916489}
 --- !u!1 &794726761
 GameObject:
@@ -1487,7 +1483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 848659576}
   gridSpaceImage: {fileID: 794726763}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 794726761}
 --- !u!1 &856124992
 GameObject:
@@ -1637,7 +1632,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 856124994}
   gridSpaceImage: {fileID: 2143363588}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 2143363586}
 --- !u!1 &1060049594
 GameObject:
@@ -2230,7 +2224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 1452161771}
   gridSpaceImage: {fileID: 1592998427}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 1592998425}
 --- !u!1 &1592998425
 GameObject:
@@ -2346,6 +2339,8 @@ MonoBehaviour:
   - {fileID: 1592998427}
   - {fileID: 1093916491}
   - {fileID: 2143363588}
+  spriteX: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
+  spriteO: {fileID: 21300000, guid: 12201dbac49f3394e9c2c2f842c87a0a, type: 3}
 --- !u!4 &1648101363
 Transform:
   m_ObjectHideFlags: 0
@@ -2584,7 +2579,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 1688277664}
   gridSpaceImage: {fileID: 1314068272}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 1314068270}
 --- !u!1 &1716340317
 GameObject:
@@ -2826,7 +2820,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpace: {fileID: 1744417856}
   gridSpaceImage: {fileID: 1074235303}
-  playerSide: {fileID: 21300000, guid: 966baddcf07ef9245b924289383e7dce, type: 3}
   image: {fileID: 1074235301}
 --- !u!1 &1755239771
 GameObject:

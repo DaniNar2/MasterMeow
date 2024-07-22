@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-using UnityEngine.UI;
-
 public class GridSpace : MonoBehaviour
 {
+    private TTTManager tTTManager;
     public Button gridSpace;
     public Image gridSpaceImage;
-    public Sprite playerSide;
     public GameObject image;
 
     public void SetSpace()
     {
-        gridSpaceImage.sprite = playerSide;
+        gridSpaceImage.sprite = tTTManager.GetPlayerSide();
         image.SetActive(true);
         gridSpace.interactable = false;
+        tTTManager.EndTurn();
+    }
+
+    public void SetGameControllerReference(TTTManager manager)
+    {
+        tTTManager = manager;
     }
 }
