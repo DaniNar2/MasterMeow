@@ -10,13 +10,20 @@ public class TTTManager : MonoBehaviour
     public Sprite spriteX, spriteO;
     private Image playerImage;
     private Sprite playerSide;
+    public GameObject gameOverPanel, winMessage, loseMessage, drawMessage;
+    private int moveCount;
 
     void Awake()
     {
+        gameOverPanel.SetActive(false);
+        winMessage.SetActive(false);
+        loseMessage.SetActive(false);
+        drawMessage.SetActive(false);
         SetGameControllerReferenceOnButtons();
         playerImage = GetComponent<Image>();
         playerSide = spriteX;
         playerImage.sprite = playerSide;
+        moveCount = 0;
     }
     public void Replay()
     {
@@ -38,6 +45,8 @@ public class TTTManager : MonoBehaviour
 
     public void EndTurn()
     {
+        moveCount++;
+
         if(buttonList[0].sprite == playerSide && buttonList[1].sprite == playerSide && buttonList[2].sprite == playerSide)
         {
             GameOver();
@@ -70,6 +79,11 @@ public class TTTManager : MonoBehaviour
         {
             GameOver();
         }
+        if(moveCount >= 9)
+        {
+            gameOverPanel.SetActive(true);
+            drawMessage.SetActive(true);
+        }
         ChangeSides();
     }
 
@@ -79,6 +93,9 @@ public class TTTManager : MonoBehaviour
         {
             buttonList[i].GetComponentInParent<Button>().interactable = false;
         }
+        gameOverPanel.SetActive(true);
+        winMessage.SetActive(true);
+        //loseMessage.SetActive(true);
     }
 
     public void ChangeSides()

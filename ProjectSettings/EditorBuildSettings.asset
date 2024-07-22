@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SCENES/Mememory.unity
     guid: df984d573df19f845b68f25421486382
+  - enabled: 1
+    path: Assets/SCENES/TicTacToe.unity
+    guid: 786e215098616c242856baca39a760e2
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 608a0b2c604fd754093eeb0caa0c8367, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 438a83a5a0c840c4e83bd4e817426451, type: 2}

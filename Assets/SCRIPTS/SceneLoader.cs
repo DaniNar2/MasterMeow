@@ -24,5 +24,10 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Mememory");
     }
+
+    public void LoadTTT()
+    {
+        SceneManager.LoadScene("TicTacToe");
+    }
     
 }
