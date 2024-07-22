@@ -29,11 +29,14 @@ public class MasterMeow : MonoBehaviour
     public GameObject finishPanel;
     public GameObject messageWin;
     public GameObject messageLose;
+    public GameObject gameBG, selectionBG;
     public string skinSet;
     public bool isSkinSetSelected = false;
 
     void Awake()
     {
+        //gameBG.SetActive(false);
+        //selectionBG.SetActive(true);
         set11.SetActive(false);
         set12.SetActive(false);
         set13.SetActive(false);
@@ -52,6 +55,30 @@ public class MasterMeow : MonoBehaviour
         set34.SetActive(false);
         set35.SetActive(false);
         set36.SetActive(false);
+        set41.SetActive(false);
+        set42.SetActive(false);
+        set43.SetActive(false);
+        set44.SetActive(false);
+        set45.SetActive(false);
+        set46.SetActive(false);
+        set51.SetActive(false);
+        set52.SetActive(false);
+        set53.SetActive(false);
+        set54.SetActive(false);
+        set55.SetActive(false);
+        set56.SetActive(false);
+        set61.SetActive(false);
+        set62.SetActive(false);
+        set63.SetActive(false);
+        set64.SetActive(false);
+        set65.SetActive(false);
+        set66.SetActive(false);
+        set71.SetActive(false);
+        set72.SetActive(false);
+        set73.SetActive(false);
+        set74.SetActive(false);
+        set75.SetActive(false);
+        set76.SetActive(false);
     }
 
     public void SetSkinSet(string newSkinSet)

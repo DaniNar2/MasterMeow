@@ -59,6 +59,10 @@ MonoBehaviour:
     m_Key: SHOP
     m_Metadata:
       m_Items: []
+  - m_Id: 21261203176955904
+    m_Key: SELECTION
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

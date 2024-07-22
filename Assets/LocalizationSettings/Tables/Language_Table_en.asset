@@ -66,6 +66,12 @@ MonoBehaviour:
     m_Localized: SHOP
     m_Metadata:
       m_Items: []
+  - m_Id: 21261203176955904
+    m_Localized: 'CHOOSE YOUR
+
+      TOKENS'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
