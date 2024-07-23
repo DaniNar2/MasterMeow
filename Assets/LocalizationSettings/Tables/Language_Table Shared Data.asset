@@ -51,10 +51,6 @@ MonoBehaviour:
     m_Key: DRAW
     m_Metadata:
       m_Items: []
-  - m_Id: 21030425149399040
-    m_Key: CAT BALL
-    m_Metadata:
-      m_Items: []
   - m_Id: 21034266565632000
     m_Key: SHOP
     m_Metadata:
@@ -69,6 +65,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 21644887594196992
     m_Key: BASKET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21663335321788416
+    m_Key: Rules
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674461392625664
+    m_Key: FOOTBALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674561355472896
+    m_Key: WOOL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674626564317184
+    m_Key: CUP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674707392749568
+    m_Key: KAWAII
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674797096329216
+    m_Key: CIRCLE
     m_Metadata:
       m_Items: []
   m_Metadata:

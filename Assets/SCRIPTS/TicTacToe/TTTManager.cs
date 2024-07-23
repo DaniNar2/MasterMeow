@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.ComponentModel.Design;
+using System.Runtime.CompilerServices;
 
 [System.Serializable]
 public class Player
@@ -29,6 +30,7 @@ public class TTTManager : MonoBehaviour
     public AudioClip clickSound, winSound, drawSound;
     public Player playerX, playerO;
     public PlayerColor active, inactive;
+    private CoinManager cm;
 
     void Awake()
     {
@@ -40,6 +42,7 @@ public class TTTManager : MonoBehaviour
         playerImage = GetComponent<Image>();
         playerImage.sprite = playerSide;
         moveCount = 0;
+        audioSource = GetComponent<AudioSource>();
     }
     public void Replay()
     {
@@ -90,54 +93,63 @@ public class TTTManager : MonoBehaviour
             GameOver();
             winMessage.SetActive(true);
             audioSource.PlayOneShot(winSound);
+            cm.AddPointsTTTWin();
         }
         else if(buttonList[3].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[5].sprite == playerSide)
         {
             GameOver();
             winMessage.SetActive(true);
             audioSource.PlayOneShot(winSound);
+            cm.AddPointsTTTWin();
         }
         else if(buttonList[6].sprite == playerSide && buttonList[7].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
             winMessage.SetActive(true);
             audioSource.PlayOneShot(winSound);
+            cm.AddPointsTTTWin();
         }
         else if(buttonList[0].sprite == playerSide && buttonList[3].sprite == playerSide && buttonList[6].sprite == playerSide)
         {
             GameOver();
             winMessage.SetActive(true);
             audioSource.PlayOneShot(winSound);
+            cm.AddPointsTTTWin();
         }
         else if(buttonList[1].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[7].sprite == playerSide)
         {
             GameOver();
             winMessage.SetActive(true);
             audioSource.PlayOneShot(winSound);
+            cm.AddPointsTTTWin();
         }
         else if(buttonList[2].sprite == playerSide && buttonList[5].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
             winMessage.SetActive(true);
             audioSource.PlayOneShot(winSound);
+            cm.AddPointsTTTWin();
         }
         else if(buttonList[0].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
             winMessage.SetActive(true);
             audioSource.PlayOneShot(winSound);
+            cm.AddPointsTTTWin();
         }
         else if(buttonList[2].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[6].sprite == playerSide)
         {
             GameOver();
             winMessage.SetActive(true);
             audioSource.PlayOneShot(winSound);
+            cm.AddPointsTTTWin();
         }
         else if(moveCount >= 9)
         {
             gameOverPanel.SetActive(true);
             drawMessage.SetActive(true);
             audioSource.PlayOneShot(drawSound);
+            cm.AddPointsTTTDraw();
             SetPlayerColorsInactive();
         }
         else

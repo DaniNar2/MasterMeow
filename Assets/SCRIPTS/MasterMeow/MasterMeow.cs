@@ -26,17 +26,16 @@ public class MasterMeow : MonoBehaviour
     private Dictionary<string, Sprite> dicoSprite = new Dictionary<string, Sprite>();
     private string[] codePlayer = new string[4];
     public GameObject hiddenSlot;
-    public GameObject finishPanel;
+    public GameObject finishPanel, choicePanel;
     public GameObject messageWin;
     public GameObject messageLose;
-    public GameObject gameBG, selectionBG;
+    
     public string skinSet;
     public bool isSkinSetSelected = false;
 
     void Awake()
     {
-        //gameBG.SetActive(false);
-        //selectionBG.SetActive(true);
+        
         set11.SetActive(false);
         set12.SetActive(false);
         set13.SetActive(false);
@@ -85,6 +84,7 @@ public class MasterMeow : MonoBehaviour
     {
         skinSet = newSkinSet;
         isSkinSetSelected = true;
+        choicePanel.SetActive(false);
         UpdateSkinSet();
         GetNewSecretCode();
     }

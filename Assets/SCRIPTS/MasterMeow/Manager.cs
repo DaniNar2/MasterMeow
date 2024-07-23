@@ -16,14 +16,18 @@ public class Manager : MonoBehaviour
     [SerializeField] string[] code = new string[4];
     public AudioSource audioSource;
     public AudioClip clickSound, winSound, loseSound;
+    public GameObject gameBG, selectionBG;
+    private SkinManager skin;
 
     void Start()
     {
+        masterMeow.choicePanel.SetActive(true);
         masterMeow.finishPanel.SetActive(false);
         masterMeow.messageWin.SetActive(false);
         masterMeow.messageLose.SetActive(false);
         masterMeow.GetNewSecretCode();
         emptySprite = gameSlot[currentSlot].transform.Find("C1").GetComponent<Image>().sprite;
+        
         audioSource = GetComponent<AudioSource>();
     }
 

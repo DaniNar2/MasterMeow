@@ -56,8 +56,16 @@ MonoBehaviour:
     m_Localized: PAREGGIO!
     m_Metadata:
       m_Items: []
-  - m_Id: 21030425149399040
-    m_Localized: GATTO PALLA
+  - m_Id: 21663335321788416
+    m_Localized: "Obiettivo:\nIl giocatore ha un numero limitato di tentativi per
+      indovinare la combinazione segreta di  quattro gattini scelti tra sei pedine
+      differenti\n\nNB:\nLa combinazione pu\xF2 essere formata anche da ripetizioni
+      dello stesso gatto\n\nFeedback:\nPedina nera: sia la posizione che l'icona
+      di una delle 4 pedine sono corrette\nPedina bianca: l'icona di una delle 4
+      pedine \xE8 corretta, ma la posizione \xE8 errata\n\nVittoria: \nIl giocatore
+      vince se indovina la combinazione esatta prima di esaurire i tentativi \n\nFine
+      del Gioco:\n Il gioco termina con la vittoria del giocatore o con l\u2019esaurimento
+      dei tentativi\_disponibili"
     m_Metadata:
       m_Items: []
   - m_Id: 21034266565632000
@@ -80,6 +88,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 21644887594196992
     m_Localized: GATTO BASKET
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674461392625664
+    m_Localized: GATTO CALCIATORE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674561355472896
+    m_Localized: GATTO GOMITOLO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674626564317184
+    m_Localized: GATTO TAZZA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674707392749568
+    m_Localized: KAWAII CAT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21674797096329216
+    m_Localized: GATTI TONDI
     m_Metadata:
       m_Items: []
   references:

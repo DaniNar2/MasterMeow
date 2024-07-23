@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,18 +10,18 @@ public class SkinManager : MonoBehaviour
     [SerializeField] MasterMeow masterMeow;
     public Image woolIm, basketIm, soccerIm, kawaiiIm, tazzeIm, tondiIm;
     public Sprite bloccato, wool, basket, soccer, kawaii, tazze, tondi;
-    public bool woolSbloccato = false, basketSbloccato = false, soccerSbloccato = false, kawaiiSbloccato = false, tazzeSbloccato = false, tondiSbloccato = false;
+    public ShopManager shop;
+    private bool cb = false, cw = false, ctz = false, ct = false, cc = false, ck = false, cd = false;
+    private SkinManager instance;
+    
+    
 
-    public int coins;
-    public Text CoinTXT;
 
-    void Start(){
-        CoinTXT.text = coins.ToString();
-        
-    }
 
     public void Awake()
     {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
         woolIm.sprite = bloccato;
         basketIm.sprite = bloccato;
         soccerIm.sprite = bloccato;
@@ -28,60 +30,42 @@ public class SkinManager : MonoBehaviour
         tondiIm.sprite = bloccato;
     }
 
+    
+
     public void ChangeToDefault()
     {
-        masterMeow.SetSkinSet("Default");
+       masterMeow.SetSkinSet("Default");
     }
 
     public void ChangeToWool()
     {
-        if(woolSbloccato)
-        {
-            woolIm.sprite = wool;
-            masterMeow.SetSkinSet("Wool");
-        }
-        
+        masterMeow.SetSkinSet("Wool");
     }
+
+    
 
     public void ChangeToBasket()
     {
-        if(basketSbloccato)
-        {
-            basketIm.sprite = basket;
+        if(shop.basketSbloccato)
             masterMeow.SetSkinSet("Basket");
-        }
-        
     }
     public void ChangeToSoccer()
     {
-        if(soccerSbloccato)
-        {
-            soccerIm.sprite = soccer;
+        if(shop.soccerSbloccato)
             masterMeow.SetSkinSet("Soccer");
-        }
     }
     public void ChangeToKawaii()
     {
-        if(kawaiiSbloccato)
-        {
-            kawaiiIm.sprite = kawaii;
-            masterMeow.SetSkinSet("Kawaii");
-        }
+        masterMeow.SetSkinSet("Kawaii");
     }
     public void ChangeToTazza()
     {
-        if(tazzeSbloccato)
-        {
-            tazzeIm.sprite = tazze;
+        if(shop.tazzeSbloccato)
             masterMeow.SetSkinSet("Tazza");
-        }
     }
     public void ChangeToTondi()
     {
-        if(tondiSbloccato)
-        {
-            tondiIm.sprite = tondi;
+        if(shop.tondiSbloccato)
             masterMeow.SetSkinSet("Tondi");
-        }
     }
 }

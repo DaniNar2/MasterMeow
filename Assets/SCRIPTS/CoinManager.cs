@@ -5,7 +5,7 @@ public class CoinManager : MonoBehaviour
 {
     public static CoinManager instance;
     public Text coinText;
-    int coins = 0;
+    public int coins = 0;
 
     public void Awake()
     {
@@ -13,7 +13,7 @@ public class CoinManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    public void Start()
     {
         coins = PlayerPrefs.GetInt("coins", 0);
         coinText.text = coins.ToString();
@@ -43,7 +43,15 @@ public class CoinManager : MonoBehaviour
         PlayerPrefs.SetInt("coins", coins);
     }
 
-    public void AddPointsTTT()
+    public void AddPointsTTTWin()
+    {
+        Debug.Log("AddPointsTTT called");
+        coins += 2;
+        coinText.text = coins.ToString();
+        PlayerPrefs.SetInt("coins", coins);
+    }
+
+    public void AddPointsTTTDraw()
     {
         Debug.Log("AddPointsTTT called");
         coins += 2;
