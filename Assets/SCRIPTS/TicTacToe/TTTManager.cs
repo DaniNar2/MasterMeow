@@ -37,10 +37,10 @@ public class TTTManager : MonoBehaviour
         drawMessage.SetActive(false);
         SetGameControllerReferenceOnButtons();
         playerImage = GetComponent<Image>();
-        playerSide = spriteX;
+        //playerSide = spriteX;
         playerImage.sprite = playerSide;
         moveCount = 0;
-        SetPlayerColors(playerX, playerO);
+        //SetPlayerColors(playerX, playerO);
     }
     public void Replay()
     {
@@ -52,6 +52,28 @@ public class TTTManager : MonoBehaviour
         for(int i = 0; i < buttonList.Length; i++)
         {
             buttonList[i].GetComponentInParent<GridSpace>().SetGameControllerReference(this);
+        }
+    }
+
+    public void SetStartingSide(Sprite startingSide)
+    {
+        playerSide = startingSide;
+        if(playerSide == spriteX)
+        {
+            SetPlayerColors(playerX, playerO);
+        }
+        else
+        {
+            SetPlayerColors(playerO, playerX);
+        }
+        StartGame();
+    }
+
+    public void StartGame()
+    {
+        for(int i=0; i < buttonList.Length; i++)
+        {
+            buttonList[i].GetComponentInParent<Button>().interactable = true;
         }
     }
 
@@ -100,6 +122,7 @@ public class TTTManager : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
             drawMessage.SetActive(true);
+            SetPlayerColorsInactive();
         }
         else
         {
@@ -137,5 +160,11 @@ public class TTTManager : MonoBehaviour
     {
         newPlayer.panel.color = active.panelColor;
         oldPlayer.panel.color = inactive.panelColor;
+    }
+
+    public void SetPlayerColorsInactive()
+    {
+        playerX.panel.color = inactive.panelColor;
+        playerO.panel.color = inactive.panelColor;
     }
 }
