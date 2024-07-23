@@ -4123,9 +4123,9 @@ MonoBehaviour:
     panel: {fileID: 1989801804}
     side: {fileID: 657582068}
   active:
-    panelColor: {r: 0, g: 0.16470589, b: 0.50980395, a: 0.39215687}
-  inactive:
     panelColor: {r: 0.3529412, g: 0.6784314, b: 0.8980392, a: 0.39215687}
+  inactive:
+    panelColor: {r: 0, g: 0.16470589, b: 0.50980395, a: 0.39215687}
 --- !u!4 &1648101363
 Transform:
   m_ObjectHideFlags: 0
