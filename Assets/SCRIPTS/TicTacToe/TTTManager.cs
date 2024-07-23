@@ -3,6 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.ComponentModel.Design;
+
+[System.Serializable]
+public class Player
+{
+    public Image panel, side;
+}
+
+[System.Serializable]
+public class PlayerColor
+{
+    public Color panelColor;
+}
 
 public class TTTManager : MonoBehaviour
 {
@@ -13,6 +26,9 @@ public class TTTManager : MonoBehaviour
     public GameObject gameOverPanel, winMessage, loseMessage, drawMessage;
     private int moveCount;
 
+    public Player playerX, playerO;
+    public PlayerColor active, inactive;
+
     void Awake()
     {
         gameOverPanel.SetActive(false);
@@ -21,9 +37,10 @@ public class TTTManager : MonoBehaviour
         drawMessage.SetActive(false);
         SetGameControllerReferenceOnButtons();
         playerImage = GetComponent<Image>();
-        playerSide = spriteX;
+        //playerSide = spriteX;
         playerImage.sprite = playerSide;
         moveCount = 0;
+        //SetPlayerColors(playerX, playerO);
     }
     public void Replay()
     {
@@ -35,6 +52,28 @@ public class TTTManager : MonoBehaviour
         for(int i = 0; i < buttonList.Length; i++)
         {
             buttonList[i].GetComponentInParent<GridSpace>().SetGameControllerReference(this);
+        }
+    }
+
+    public void SetStartingSide(Sprite startingSide)
+    {
+        playerSide = startingSide;
+        if(playerSide == spriteX)
+        {
+            SetPlayerColors(playerX, playerO);
+        }
+        else
+        {
+            SetPlayerColors(playerO, playerX);
+        }
+        StartGame();
+    }
+
+    public void StartGame()
+    {
+        for(int i=0; i < buttonList.Length; i++)
+        {
+            buttonList[i].GetComponentInParent<Button>().interactable = true;
         }
     }
 
@@ -51,40 +90,45 @@ public class TTTManager : MonoBehaviour
         {
             GameOver();
         }
-        if(buttonList[3].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[5].sprite == playerSide)
+        else if(buttonList[3].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[5].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[6].sprite == playerSide && buttonList[7].sprite == playerSide && buttonList[8].sprite == playerSide)
+        else if(buttonList[6].sprite == playerSide && buttonList[7].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[0].sprite == playerSide && buttonList[3].sprite == playerSide && buttonList[6].sprite == playerSide)
+        else if(buttonList[0].sprite == playerSide && buttonList[3].sprite == playerSide && buttonList[6].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[1].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[7].sprite == playerSide)
+        else if(buttonList[1].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[7].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[2].sprite == playerSide && buttonList[5].sprite == playerSide && buttonList[8].sprite == playerSide)
+        else if(buttonList[2].sprite == playerSide && buttonList[5].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[0].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[8].sprite == playerSide)
+        else if(buttonList[0].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[2].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[6].sprite == playerSide)
+        else if(buttonList[2].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[6].sprite == playerSide)
         {
             GameOver();
         }
-        if(moveCount >= 9)
+        else if(moveCount >= 9)
         {
             gameOverPanel.SetActive(true);
             drawMessage.SetActive(true);
+            SetPlayerColorsInactive();
         }
-        ChangeSides();
+        else
+        {
+            ChangeSides();
+        }
+        
     }
 
     public void GameOver()
@@ -102,5 +146,25 @@ public class TTTManager : MonoBehaviour
     {
         playerSide = (playerSide == spriteX) ? spriteO : spriteX;
         playerImage.sprite = playerSide;
+        if(playerSide == spriteX)
+        {
+            SetPlayerColors(playerX, playerO);
+        }
+        else
+        {
+            SetPlayerColors(playerO, playerX);
+        }
+    }
+
+    public void SetPlayerColors(Player newPlayer, Player oldPlayer)
+    {
+        newPlayer.panel.color = active.panelColor;
+        oldPlayer.panel.color = inactive.panelColor;
+    }
+
+    public void SetPlayerColorsInactive()
+    {
+        playerX.panel.color = inactive.panelColor;
+        playerO.panel.color = inactive.panelColor;
     }
 }
