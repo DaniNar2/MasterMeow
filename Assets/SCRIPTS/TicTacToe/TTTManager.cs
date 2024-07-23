@@ -120,9 +120,9 @@ public class TTTManager : MonoBehaviour
         playerImage.sprite = playerSide;
     }
 
-    public void SetPlayerColors(Player new, Player old)
+    public void SetPlayerColors(Player newPlayer, Player oldPlayer)
     {
-        new.panel.color = active.panel.color;
-        old.panel.color = inactive.panel.color;
+        newPlayer.panel.color = active.panelColor;
+        oldPlayer.panel.color = inactive.panelColor;
     }
 }
