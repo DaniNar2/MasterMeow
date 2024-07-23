@@ -12,10 +12,12 @@ public class GridSpace : MonoBehaviour
 
     public void SetSpace()
     {
+        tTTManager.audioSource.PlayOneShot(tTTManager.clickSound);
         gridSpaceImage.sprite = tTTManager.GetPlayerSide();
         image.SetActive(true);
         gridSpace.interactable = false;
         tTTManager.EndTurn();
+        
     }
 
     public void SetGameControllerReference(TTTManager manager)

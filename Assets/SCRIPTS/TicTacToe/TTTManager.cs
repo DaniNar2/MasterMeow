@@ -25,7 +25,8 @@ public class TTTManager : MonoBehaviour
     private Sprite playerSide;
     public GameObject gameOverPanel, winMessage, loseMessage, drawMessage;
     private int moveCount;
-
+    public AudioSource audioSource;
+    public AudioClip clickSound, winSound, drawSound;
     public Player playerX, playerO;
     public PlayerColor active, inactive;
 
@@ -37,10 +38,8 @@ public class TTTManager : MonoBehaviour
         drawMessage.SetActive(false);
         SetGameControllerReferenceOnButtons();
         playerImage = GetComponent<Image>();
-        //playerSide = spriteX;
         playerImage.sprite = playerSide;
         moveCount = 0;
-        //SetPlayerColors(playerX, playerO);
     }
     public void Replay()
     {
@@ -89,39 +88,56 @@ public class TTTManager : MonoBehaviour
         if(buttonList[0].sprite == playerSide && buttonList[1].sprite == playerSide && buttonList[2].sprite == playerSide)
         {
             GameOver();
+            winMessage.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else if(buttonList[3].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[5].sprite == playerSide)
         {
             GameOver();
+            winMessage.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else if(buttonList[6].sprite == playerSide && buttonList[7].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
+            winMessage.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else if(buttonList[0].sprite == playerSide && buttonList[3].sprite == playerSide && buttonList[6].sprite == playerSide)
         {
             GameOver();
+            winMessage.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else if(buttonList[1].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[7].sprite == playerSide)
         {
             GameOver();
+            winMessage.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else if(buttonList[2].sprite == playerSide && buttonList[5].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
+            winMessage.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else if(buttonList[0].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
+            winMessage.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else if(buttonList[2].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[6].sprite == playerSide)
         {
             GameOver();
+            winMessage.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else if(moveCount >= 9)
         {
             gameOverPanel.SetActive(true);
             drawMessage.SetActive(true);
+            audioSource.PlayOneShot(drawSound);
             SetPlayerColorsInactive();
         }
         else
@@ -138,8 +154,6 @@ public class TTTManager : MonoBehaviour
             buttonList[i].GetComponentInParent<Button>().interactable = false;
         }
         gameOverPanel.SetActive(true);
-        winMessage.SetActive(true);
-        //loseMessage.SetActive(true);
     }
 
     public void ChangeSides()

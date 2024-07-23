@@ -72,6 +72,14 @@ MonoBehaviour:
       TOKENS'
     m_Metadata:
       m_Items: []
+  - m_Id: 21658208487350272
+    m_Localized: 'ROCK
+
+      PAPER
+
+      SCISSORS'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
