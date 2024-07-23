@@ -63,6 +63,10 @@ MonoBehaviour:
     m_Key: SELECTION
     m_Metadata:
       m_Items: []
+  - m_Id: 21635676718063616
+    m_Key: RULE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

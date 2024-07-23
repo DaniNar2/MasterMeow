@@ -72,6 +72,41 @@ MonoBehaviour:
       TOKENS'
     m_Metadata:
       m_Items: []
+  - m_Id: 21635676718063616
+    m_Localized: 'Objective:
+
+      The player has a limited number of attempts to
+      guess the secret combination of four kittens chosen from six different tokens.
+
+
+      Note:
+
+      The
+      combination can include repetitions of the same kitten.
+
+
+      Feedback:
+
+      Black
+      token: both the position and the icon of one of the 4 tokens are correct.
+
+      White
+      token: the icon of one of the 4 tokens is correct, but the position is incorrect.
+
+
+      Victory:
+
+      The
+      player wins if they guess the exact combination before running out of attempts.
+
+
+      End
+      of Game:
+
+      The game ends with the player''s victory or when the available
+      attempts are exhausted.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

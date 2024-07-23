@@ -2903,6 +2903,7 @@ GameObject:
   - component: {fileID: 897638083}
   - component: {fileID: 897638082}
   - component: {fileID: 897638081}
+  - component: {fileID: 897638084}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -2928,8 +2929,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.7606201, y: -527.449}
-  m_SizeDelta: {x: 899.7387, y: 2238.958}
+  m_AnchoredPosition: {x: -0.7606201, y: -648.3286}
+  m_SizeDelta: {x: 899.7387, y: 2480.7173}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897638081
 MonoBehaviour:
@@ -2943,7 +2944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Content: {fileID: 0}
+  m_Content: {fileID: 969857550}
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
@@ -2951,7 +2952,7 @@ MonoBehaviour:
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 658348364}
+  m_Viewport: {fileID: 897638080}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
   m_HorizontalScrollbarVisibility: 2
@@ -2999,6 +3000,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897638079}
   m_CullTransparentMesh: 1
+--- !u!114 &897638084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897638079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &903571541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,6 +3433,7 @@ GameObject:
   - component: {fileID: 969857550}
   - component: {fileID: 969857552}
   - component: {fileID: 969857551}
+  - component: {fileID: 969857553}
   m_Layer: 5
   m_Name: RulesText
   m_TagString: Untagged
@@ -3441,7 +3457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6.095703, y: -15.239258}
+  m_AnchoredPosition: {x: 6.095703, y: 0}
   m_SizeDelta: {x: -85.3394, y: -30.4785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969857551
@@ -3477,14 +3493,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Obiettivo:\nIl giocatore ha un numero limitato di tentativi per indovinare
-    la combinazione segreta di  quattro gattini scelti tra sei pedine differenti\n\nNB:\nLa
-    combinazione pu\xF2 essere formata anche da ripetizioni dello stesso gatto\n\nFeedback:\nPedina
-    nera: sia la posizione che l'icona di una delle 4 pedine sono corrette\nPedina
-    bianca: l'icona di una delle 4 pedine \xE8 corretta, ma la posizione \xE8 errata\n\nVittoria:
-    \nIl giocatore vince se indovina la combinazione esatta prima di esaurire i tentativi
-    \n\nFine del Gioco:\n Il gioco termina con la vittoria del giocatore o con l\u2019esaurimento
-    dei tentativi\_disponibili"
+  m_Text: 
 --- !u!222 &969857552
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3493,6 +3502,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969857549}
   m_CullTransparentMesh: 1
+--- !u!114 &969857553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969857549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:80059b265b364524e91b22284c94061e
+    m_TableEntryReference:
+      m_KeyId: 21635676718063616
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 969857551}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &984684783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,7 +4307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1247757927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5242,7 +5291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1601917460
 RectTransform:
   m_ObjectHideFlags: 0
