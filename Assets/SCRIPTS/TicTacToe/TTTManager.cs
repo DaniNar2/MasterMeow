@@ -40,6 +40,7 @@ public class TTTManager : MonoBehaviour
         playerSide = spriteX;
         playerImage.sprite = playerSide;
         moveCount = 0;
+        SetPlayerColors(playerX, playerO);
     }
     public void Replay()
     {
@@ -118,6 +119,14 @@ public class TTTManager : MonoBehaviour
     {
         playerSide = (playerSide == spriteX) ? spriteO : spriteX;
         playerImage.sprite = playerSide;
+        if(playerSide == spriteX)
+        {
+            SetPlayerColors(playerX, playerO);
+        }
+        else
+        {
+            SetPlayerColors(playerO, playerX);
+        }
     }
 
     public void SetPlayerColors(Player newPlayer, Player oldPlayer)
