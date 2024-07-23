@@ -3,6 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.ComponentModel.Design;
+
+[System.Serializable]
+public class Player
+{
+    public Image panel, side;
+}
+
+[System.Serializable]
+public class PlayerColor
+{
+    public Color panelColor;
+}
 
 public class TTTManager : MonoBehaviour
 {
@@ -12,6 +25,9 @@ public class TTTManager : MonoBehaviour
     private Sprite playerSide;
     public GameObject gameOverPanel, winMessage, loseMessage, drawMessage;
     private int moveCount;
+
+    public Player playerX, playerO;
+    public PlayerColor active, inactive;
 
     void Awake()
     {
@@ -102,5 +118,11 @@ public class TTTManager : MonoBehaviour
     {
         playerSide = (playerSide == spriteX) ? spriteO : spriteX;
         playerImage.sprite = playerSide;
+    }
+
+    public void SetPlayerColors(Player new, Player old)
+    {
+        new.panel.color = active.panel.color;
+        old.panel.color = inactive.panel.color;
     }
 }
