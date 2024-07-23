@@ -68,40 +68,44 @@ public class TTTManager : MonoBehaviour
         {
             GameOver();
         }
-        if(buttonList[3].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[5].sprite == playerSide)
+        else if(buttonList[3].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[5].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[6].sprite == playerSide && buttonList[7].sprite == playerSide && buttonList[8].sprite == playerSide)
+        else if(buttonList[6].sprite == playerSide && buttonList[7].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[0].sprite == playerSide && buttonList[3].sprite == playerSide && buttonList[6].sprite == playerSide)
+        else if(buttonList[0].sprite == playerSide && buttonList[3].sprite == playerSide && buttonList[6].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[1].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[7].sprite == playerSide)
+        else if(buttonList[1].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[7].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[2].sprite == playerSide && buttonList[5].sprite == playerSide && buttonList[8].sprite == playerSide)
+        else if(buttonList[2].sprite == playerSide && buttonList[5].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[0].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[8].sprite == playerSide)
+        else if(buttonList[0].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[8].sprite == playerSide)
         {
             GameOver();
         }
-        if(buttonList[2].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[6].sprite == playerSide)
+        else if(buttonList[2].sprite == playerSide && buttonList[4].sprite == playerSide && buttonList[6].sprite == playerSide)
         {
             GameOver();
         }
-        if(moveCount >= 9)
+        else if(moveCount >= 9)
         {
             gameOverPanel.SetActive(true);
             drawMessage.SetActive(true);
         }
-        ChangeSides();
+        else
+        {
+            ChangeSides();
+        }
+        
     }
 
     public void GameOver()
