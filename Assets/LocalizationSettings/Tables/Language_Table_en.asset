@@ -107,6 +107,10 @@ MonoBehaviour:
       attempts are exhausted.'
     m_Metadata:
       m_Items: []
+  - m_Id: 21644887594196992
+    m_Localized: BASKET CAT
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

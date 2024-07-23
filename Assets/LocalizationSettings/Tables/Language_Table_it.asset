@@ -82,6 +82,10 @@ MonoBehaviour:
       dei tentativi\_disponibili"
     m_Metadata:
       m_Items: []
+  - m_Id: 21644887594196992
+    m_Localized: GATTO BASKET
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

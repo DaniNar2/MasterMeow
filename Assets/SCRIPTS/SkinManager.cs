@@ -10,6 +10,14 @@ public class SkinManager : MonoBehaviour
     public Sprite bloccato, wool, basket, soccer, kawaii, tazze, tondi;
     public bool woolSbloccato = false, basketSbloccato = false, soccerSbloccato = false, kawaiiSbloccato = false, tazzeSbloccato = false, tondiSbloccato = false;
 
+    public int coins;
+    public Text CoinTXT;
+
+    void Start(){
+        CoinTXT.text = coins.ToString();
+        
+    }
+
     public void Awake()
     {
         woolIm.sprite = bloccato;
